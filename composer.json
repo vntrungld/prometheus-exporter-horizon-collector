@@ -1,7 +1,7 @@
 {
     "name": "vntrungld/prometheus-exporter-horizon-collector",
     "description": "Horizon Collector for Prometheus Exporter",
-    "license": "license",
+    "license": "MIT",
     "authors": [
         {
             "name": "vntrungld",
@@ -9,10 +9,12 @@
             "homepage": "https://github.com/vntrungld"
         }
     ],
-    "homepage": "https://github.com/vntrungld/prometheusexporterhorizoncollector",
+    "homepage": "https://github.com/vntrungld/prometheus-exporter-horizon-collector",
     "keywords": ["Laravel", "Prometheus Exporter", "Horizon Collector"],
     "require": {
-        "illuminate/support": "~6|~7|~8|~9|~10"
+	"laravel/horizon": "~3|~4|~5",
+        "illuminate/support": "~6|~7|~8|~9|~10",
+        "vntrungld/prometheus-exporter": "^0.0.1"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
