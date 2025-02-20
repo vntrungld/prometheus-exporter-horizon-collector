@@ -13,7 +13,7 @@
     "keywords": ["Laravel", "Prometheus Exporter", "Horizon Collector"],
     "require": {
         "laravel/horizon": "~3|~4|~5",
-        "illuminate/support": "~6|~7|~8|~9|~10",
+        "illuminate/support": "~6|~7|~8|~9|~10|~11",
         "vntrungld/prometheus-exporter": "~1"
     },
     "require-dev": {
