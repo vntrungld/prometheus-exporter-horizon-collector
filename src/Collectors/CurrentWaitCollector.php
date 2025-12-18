@@ -6,16 +6,16 @@ use Laravel\Horizon\Contracts\WorkloadRepository;
 use Vntrungld\PrometheusExporter\Collectors\Collector;
 use Vntrungld\PrometheusExporter\Prometheus;
 
-class CurrentWorkloadCollector implements Collector
+class CurrentWaitCollector implements Collector
 {
     /**
      * @inheritDoc
      */
     public function register(Prometheus $prometheus): void
     {
-        $gauge = $prometheus->addGauge('horizon_current_workload')
+        $gauge = $prometheus->addGauge('horizon_current_wait')
             ->labels(['queue'])
-            ->help('Current workload of all queues');
+            ->help('Current wait time of all queues');
 
         collect(app(WorkloadRepository::class)->get())
             ->sortBy('name')
@@ -23,14 +23,15 @@ class CurrentWorkloadCollector implements Collector
             ->each(function ($workload) use ($gauge) {
                 if (isset($workload['split_queues']) && $workload['split_queues']) {
                     $workload['split_queues']->each(function ($queue) use ($gauge) {
-                        $gauge->value($queue['length'], [$queue['name']]);
+                        $gauge->value($queue['wait'], [$queue['name']]);
                     });
 
                     return;
                 }
 
-                $gauge->value($workload['length'], [$workload['name']]);
+                $gauge->value($workload['wait'], [$workload['name']]);
             })
             ->toArray();
     }
 }
+

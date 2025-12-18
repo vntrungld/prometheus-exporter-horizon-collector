@@ -15,6 +15,7 @@ class HorizonCollectorSet implements CollectorSet
             \Vntrungld\PrometheusExporterHorizonCollector\Collectors\CurrentMasterSupervisorCollector::class,
             \Vntrungld\PrometheusExporterHorizonCollector\Collectors\CurrentProcessesPerQueueCollector::class,
             \Vntrungld\PrometheusExporterHorizonCollector\Collectors\CurrentWorkloadCollector::class,
+            \Vntrungld\PrometheusExporterHorizonCollector\Collectors\CurrentWaitCollector::class,
             \Vntrungld\PrometheusExporterHorizonCollector\Collectors\FailedJobsPerHourCollector::class,
             \Vntrungld\PrometheusExporterHorizonCollector\Collectors\HorizonStatusCollector::class,
             \Vntrungld\PrometheusExporterHorizonCollector\Collectors\JobsPerMinuteCollector::class,
