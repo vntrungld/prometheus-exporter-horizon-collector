@@ -10,14 +10,14 @@ abstract class TestCase extends OrchestraTestCase
 {
     use MockeryPHPUnitIntegration;
 
-    protected function getPackageProviders($app): array
+    protected function getPackageProviders($app)
     {
         return [
             PrometheusExporterHorizonCollectorServiceProvider::class,
         ];
     }
 
-    protected function getEnvironmentSetUp($app): void
+    protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('prometheus-exporter.namespace', 'test');
     }

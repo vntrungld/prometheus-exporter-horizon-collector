@@ -17,8 +17,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.4', '8.0', '8.1', '8.2', '8.3']
-        laravel: ['^6.0', '^7.0', '^8.0', '^9.0', '^10.0', '^11.0']
+        php: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
+        laravel: ['^6.0', '^7.0', '^8.0', '^9.0', '^10.0', '^11.0', '^12.0']
         exclude:
           # Laravel 6.x supports PHP 7.2 - 8.0
           - php: '8.1'
@@ -27,6 +27,8 @@ jobs:
             laravel: '^6.0'
           - php: '8.3'
             laravel: '^6.0'
+          - php: '8.4'
+            laravel: '^6.0'
           # Laravel 7.x supports PHP 7.2 - 8.0
           - php: '8.1'
             laravel: '^7.0'
@@ -34,28 +36,43 @@ jobs:
             laravel: '^7.0'
           - php: '8.3'
             laravel: '^7.0'
+          - php: '8.4'
+            laravel: '^7.0'
           # Laravel 8.x supports PHP 7.3 - 8.1
           - php: '8.2'
             laravel: '^8.0'
           - php: '8.3'
+            laravel: '^8.0'
+          - php: '8.4'
             laravel: '^8.0'
           # Laravel 9.x supports PHP 8.0 - 8.2
           - php: '7.4'
             laravel: '^9.0'
           - php: '8.3'
             laravel: '^9.0'
+          - php: '8.4'
+            laravel: '^9.0'
           # Laravel 10.x supports PHP 8.1 - 8.3
           - php: '7.4'
             laravel: '^10.0'
           - php: '8.0'
             laravel: '^10.0'
-          # Laravel 11.x supports PHP 8.2 - 8.3
+          - php: '8.4'
+            laravel: '^10.0'
+          # Laravel 11.x supports PHP 8.2+
           - php: '7.4'
             laravel: '^11.0'
           - php: '8.0'
             laravel: '^11.0'
           - php: '8.1'
             laravel: '^11.0'
+          # Laravel 12.x supports PHP 8.2+
+          - php: '7.4'
+            laravel: '^12.0'
+          - php: '8.0'
+            laravel: '^12.0'
+          - php: '8.1'
+            laravel: '^12.0'
 
     name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
 
