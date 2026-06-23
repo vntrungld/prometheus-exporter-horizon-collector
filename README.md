@@ -16,8 +16,8 @@ A Laravel package that collects metrics from [Laravel Horizon](https://laravel.c
 ## Requirements
 
 - PHP 7.4+
-- Laravel 6.x, 7.x, 8.x, 9.x, 10.x, or 11.x
-- Laravel Horizon 3.x, 4.x, or 5.x
+- Laravel 6.x, 7.x, 8.x, 9.x, 10.x, 11.x, 12.x, or 13.x
+- Laravel Horizon 3.x, 4.x, 5.x, or 6.x
 - [vntrungld/prometheus-exporter](https://github.com/vntrungld/prometheus-exporter) ~1.0
 
 ## Installation
